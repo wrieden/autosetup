@@ -2,12 +2,10 @@ sudo pacman -Syu
 sudo pacman -S --noconfirm yay
 
 touch $HOME/.zshrc
-yay -S --noconfirm zsh 
+yay -S --noconfirm zsh ttf-meslo-nerd-font-powerlevel10k
 sudo chsh -s $(which zsh) $USER
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-yay -S --noconfirm ttf-meslo-nerd-font-powerlevel10k
-
-yay -S --noconfirm zsh-theme-powerlevel10k-git
-echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> $USER/.zshrc
+git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc
