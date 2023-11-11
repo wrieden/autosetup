@@ -31,3 +31,9 @@ rm -rf ~/.python-venv
 python -m venv ~/.python-venv
 source ~/.python-venv/bin/activate
 pip install $(curl -fsSL $repourl/pip-packages.txt)
+
+# code
+yay -S --noconfirm --needed code code-marketplace
+echo $(curl -fsSL $repourl/code-packages.txt) | xargs -rn1 code --install-extension
+
+
