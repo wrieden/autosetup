@@ -1,7 +1,12 @@
+atool
+chromium
 code
 code-marketplace
+firefox
+gedit
 gparted
 htop
+man-db
 paclog
 python-pip
 screen
