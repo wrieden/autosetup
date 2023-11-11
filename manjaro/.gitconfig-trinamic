@@ -1,0 +1,9 @@
+[user]
+	name = trinamic-sw
+	email = 57254499+trinamic-sw@users.noreply.github.com
+	
+[url "git@github-trinamic:trinamic"]
+	insteadOf = git@github.com:trinamic
+	
+[url "git@github-trinamic:trinamic-sw"]
+	insteadOf = git@github.com:trinamic-sw

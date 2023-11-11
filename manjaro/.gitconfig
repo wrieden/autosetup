@@ -1,0 +1,6 @@
+[user]
+	name = wrieden
+	email = 6313163+wrieden@users.noreply.github.com
+	
+[includeIf "hasconfig:remote.*.url:git@github.com:trinamic*/**"]
+	path = ~/.gitconfig-trinamic
