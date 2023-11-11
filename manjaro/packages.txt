@@ -1,2 +1,9 @@
+code
+code-marketplace
 gparted
+htop
 paclog
+python-pip
+screen
+ttf-meslo-nerd-font-powerlevel10k
+zsh
