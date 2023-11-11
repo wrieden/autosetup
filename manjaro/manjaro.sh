@@ -1,4 +1,4 @@
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm yay
 
 # anchor pkg, marks install date
