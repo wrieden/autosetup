@@ -1,13 +1,16 @@
 sudo pacman -Syu
 sudo pacman -S --noconfirm yay
 
+# anchor pkg, marks install date
+yay -S --noconfirm --needed paclog
+
 # git
-yay -S --noconfirm git
+yay -S --noconfirm --needed git
 git config --global user.name wrieden
 git config --global user.email 6313163+wrieden@users.noreply.github.com
 
 # zsh + goodies
-yay -S --noconfirm zsh ttf-meslo-nerd-font-powerlevel10k
+yay -S --noconfirm --needed zsh ttf-meslo-nerd-font-powerlevel10k
 sudo chsh -s $(which zsh) $USER
 rm -rf ~/.oh-my-zsh
 
@@ -16,18 +19,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 curl -fsSL https://raw.githubusercontent.com/wrieden/autosetup/main/manjaro/.zshrc > ~/.zshrc
 curl -fsSL https://raw.githubusercontent.com/wrieden/autosetup/main/manjaro/.p10k.zsh > ~/.p10k.zsh
 
-# essentials terminal
-yay -S --noconfirm nano htop screen 
-
-# essentials gui
-yay -S --noconfirm gedit gparted
-
+# packages
+yay -S --noconfirm --needed $(curl -fsSL https://raw.githubusercontent.com/wrieden/autosetup/main/manjaro/packages.txt)
 
 # python
-yay -S --noconfirm python python-pip
+yay -S --noconfirm --needed python python-pip
 python -m venv ~/.python-venv
 source ~/.python-venv/bin/activate
 pip install $(curl -fsSL https://raw.githubusercontent.com/wrieden/autosetup/main/manjaro/pip-packages.txt)
-
-
-yay -S --noconfirm code code-marketplace
