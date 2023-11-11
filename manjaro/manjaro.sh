@@ -27,7 +27,7 @@ yay -S --noconfirm gedit gparted
 yay -S --noconfirm python python-pip
 python -m venv ~/.python-venv
 source ~/.python-venv/bin/activate
-pip install -r $(curl -fsSL https://raw.githubusercontent.com/wrieden/autosetup/main/manjaro/pip-packages.txt)
+pip install $(curl -fsSL https://raw.githubusercontent.com/wrieden/autosetup/main/manjaro/pip-packages.txt)
 
 
 yay -S --noconfirm code code-marketplace

@@ -1,0 +1,8 @@
+code
+code-marketplace
+expac
+man-db
+python-pip
+ttf-meslo-nerd-font-powerlevel10k
+yay
+zsh
