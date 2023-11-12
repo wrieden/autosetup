@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+[[ $(command -v paclog) ]] || (echo "Missing paclog! exiting"; exit)
+[[ $(command -v pip-chill) ]] || (echo "Missing pip-chill! exiting"; exit)
+
 setupdir=$(dirname $0)
 
 git -C $setupdir commit -a -m "pre update"
