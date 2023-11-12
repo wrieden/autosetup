@@ -1,5 +1,0 @@
-lxml
-matplotlib
-pip-chill
-pyserial
-requests
