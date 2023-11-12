@@ -1,0 +1,10 @@
+annotated-types
+fastapi-utils
+lxml
+matplotlib
+pip-chill
+pydantic-core
+pyserial
+requests
+sse-starlette
+uvicorn
