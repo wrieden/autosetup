@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-[[ $(command -v paclog) ]] || (echo "Missing paclog! exiting"; exit)
-[[ $(command -v pip-chill) ]] || (echo "Missing pip-chill! exiting"; exit)
+[[ $(command -v paclog) ]] || exit 1
+[[ $(command -v pip-chill) ]] || exit 1
 
 setupdir=$(dirname $0)
 
