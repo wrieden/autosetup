@@ -8,6 +8,7 @@ yay -S --noconfirm --needed paclog
 
 # git
 yay -S --noconfirm --needed git
+mkdir ~/.ssh
 curl -fsSL $repourl/sshconfig > ~/.ssh/config
 curl -fsSL $repourl/.gitconfig > ~/.gitconfig
 curl -fsSL $repourl/.gitconfig-trinamic > ~/.gitconfig-trinamic
