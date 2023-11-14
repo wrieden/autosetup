@@ -1,6 +1,6 @@
 Host github-trinamic
 	HostName github.com
 	User git
-	IdentityFile ~/.ssh/id_work
+	IdentityFile ~/.ssh/id_trinamic
 	
-IdentityFile ~/.ssh/id_rsa
+IdentityFile ~/.ssh/id_personal
