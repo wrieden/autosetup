@@ -5,6 +5,7 @@ matplotlib
 pip-chill
 pydantic-core
 pyserial
+regscribe
 requests
 sse-starlette
 uvicorn
