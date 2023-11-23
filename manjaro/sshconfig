@@ -2,6 +2,5 @@ Host github-trinamic
 	HostName github.com
 	User git
 	IdentityFile ~/.ssh/id_trinamic
-
-Host *
-	IdentityFile ~/.ssh/id_personal
+	
+IdentityFile ~/.ssh/id_ed25519
