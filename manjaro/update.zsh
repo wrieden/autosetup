@@ -19,3 +19,8 @@ echo "$(code --list-extensions | sort -u < $setupdir/code-packages.txt)" > $setu
 
 git -C $setupdir commit -a -m "updated"
 git -C $setupdir push
+
+
+yay -S --noconfirm --needed $(cat $setupdir/packages.txt)
+pip install $(cat $setupdir/pip-packages.txt)
+echo $(cat $setupdir/code-packages.txt) | xargs -rn1 code --install-extension
