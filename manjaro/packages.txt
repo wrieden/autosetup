@@ -13,6 +13,7 @@ htop
 man-db
 npm
 paclog
+pluma
 python-pip
 screen
 ttf-meslo-nerd-font-powerlevel10k
