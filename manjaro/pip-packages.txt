@@ -4,6 +4,7 @@ lxml
 matplotlib
 pip-chill
 pydantic-core
+pyocd
 pyserial
 regscribe
 requests
