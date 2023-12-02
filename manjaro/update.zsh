@@ -25,5 +25,5 @@ git -C $setupdir push
 
 yay -S --noconfirm --needed $(cat $setupdir/packages.txt)
 pip install $(cat $setupdir/pip-packages.txt)
-pyocd pack install $(cat $setupdir/pip-packages.txt)
+pyocd pack install $(cat $setupdir/pyocd-packages.txt)
 echo $(cat $setupdir/code-packages.txt) | xargs -rn1 code --install-extension
