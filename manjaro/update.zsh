@@ -1,7 +1,6 @@
 #!/bin/zsh
 
 [[ $(command -v paclog) ]] || exit 1
-[[ $(command -v pip-chill) ]] || exit 1
 [[ $(command -v pyocd) ]] || exit 1
 
 setupdir=$(dirname $0)
@@ -15,7 +14,7 @@ cp -v ~/.gitconfig-trinamic $setupdir/
 cp -v ~/.zshrc $setupdir/
 cp -v ~/.p10k.zsh $setupdir/
 echo """$(echo "$(yay -Qqe)\n$(paclog -f in | sed -En 's/.*installed\s+(\S+).*/\1/p' | sed -n '/paclog/,$p')" | sort | uniq -d | sort -u < $setupdir/packages.txt)""" > $setupdir/packages.txt
-echo "$(pip-chill --no-version | sort -u < $setupdir/pip-packages.txt)" > $setupdir/pip-packages.txt
+echo "$(pip list --not-required --exclude-editable --format freeze | sed -En 's/(\S+)==.*/\1/p' | sort -u < $setupdir/pip-packages.txt)" > $setupdir/pip-packages.txt
 echo "$(code --list-extensions | sort -u < $setupdir/code-packages.txt)" > $setupdir/code-packages.txt
 echo "$(pyocd pack show --no-header | sed -En 's/\s*(\S+).*/\1/p' | sort -u < $setupdir/pyocd-packages.txt)" > $setupdir/pyocd-packages.txt
 

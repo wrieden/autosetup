@@ -6,7 +6,6 @@ pip-chill
 pydantic-core
 pyocd
 pyserial
-regscribe
 requests
 sse-starlette
 uvicorn
