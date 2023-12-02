@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+[[ $(command -v paclog) ]] || exit 1
+[[ $(command -v pip-chill) ]] || exit 1
+[[ $(command -v pyocd) ]] || exit 1
 
 setupdir=$(dirname $0)
 
