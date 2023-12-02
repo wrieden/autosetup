@@ -2,10 +2,13 @@ annotated-types
 fastapi-utils
 lxml
 matplotlib
+pip
 pip-chill
 pydantic-core
+pydantic_core
 pyocd
 pyserial
 requests
+setuptools
 sse-starlette
 uvicorn
