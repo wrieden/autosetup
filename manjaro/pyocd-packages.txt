@@ -1,0 +1,5 @@
+Keil.SAMD21_DFP
+Keil.SAMD51_DFP
+Keil.STM32F1xx_DFP
+Keil.STM32G4xx_DFP
+Microchip.SAMD21_DFP
