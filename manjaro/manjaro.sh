@@ -36,6 +36,10 @@ pip install $(curl -fsSL $repourl/pip-packages.txt)
 # pyocd
 pip install pyocd
 pyocd pack install $(curl -fsSL $repourl/pyocd-packages.txt)
+git clone https://github.com/pyocd/pyOCD.git
+sudo cp pyOCD/udev/*.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules && udevadm trigger
+rm -rf pyOCD
 
 # code
 yay -S --noconfirm --needed code code-marketplace
