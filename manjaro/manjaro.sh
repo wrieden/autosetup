@@ -45,4 +45,13 @@ rm -rf pyOCD
 yay -S --noconfirm --needed code code-marketplace
 echo $(curl -fsSL $repourl/code-packages.txt) | xargs -rn1 code --install-extension
 
+$ wsl stuff
+ELECTRON_WAYLAND='''
+--enable-features=UseOzonePlatform
+--ozone-platform=wayland
+'''
+echo $ELECTRON_WAYLAND > ~/.config/chromium-flags.conf
+echo $ELECTRON_WAYLAND > ~/.config/code-flags.conf
+gsettings set org.gnome.desktop.interface cursor-size 12
+
 

@@ -5,7 +5,9 @@
 
 setupdir=$(dirname $0)
 
-git -C $setupdir commit -a -m "pre update"
+
+#git -C $setupdir commit -a -m "pre update"
+git stash
 git -C $setupdir pull --rebase
 
 cp -v ~/.ssh/config $setupdir/sshconfig
@@ -18,9 +20,7 @@ echo "$(pip list --not-required --exclude-editable --format freeze | sed -En 's/
 echo "$(code --list-extensions | sort -u < $setupdir/code-packages.txt)" > $setupdir/code-packages.txt
 echo "$(pyocd pack show --no-header | sed -En 's/\s*(\S+).*/\1/p' | sort -u < $setupdir/pyocd-packages.txt)" > $setupdir/pyocd-packages.txt
 
-git -C $setupdir commit -a -m "updated"
-git -C $setupdir push
-
+git stash pop
 
 yay -S --noconfirm --needed $(cat $setupdir/packages.txt)
 pip install $(cat $setupdir/pip-packages.txt)
