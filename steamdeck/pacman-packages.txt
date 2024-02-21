@@ -1,6 +1,14 @@
-
+atool
 code
 code-marketplace
+gedit
+gitg
+gparted
+htop
+man-db
+npm
 paclog
 python-pip
+screen
 ttf-meslo-nerd-font-powerlevel10k
+zsh

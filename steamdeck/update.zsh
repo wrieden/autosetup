@@ -11,6 +11,7 @@ common=$(dirname $(pwd))/common/
 #git -C $setupdir commit -a -m "pre update"
 git stash
 git pull --rebase
+git stash pop
 
 cp -v ~/.ssh/config $common/sshconfig
 cp -v ~/.gitconfig $common/
@@ -24,7 +25,6 @@ echo "$(code --list-extensions | sort -u < $common/code-packages.txt)" > $common
 echo "$(pyocd pack show --no-header | sed -En 's/\s*(\S+).*/\1/p' | sort -u < $common/pyocd-packages.txt)" > $common/pyocd-packages.txt
 echo "$(flatpak list --app --columns application | sort -u < $common/flatpak-packages.txt)" > $common/flatpak-packages.txt
 
-git stash pop
 
 yay -S --noconfirm --needed $(cat pacman-packages.txt)
 pip install $(cat $common/pip-packages.txt)
