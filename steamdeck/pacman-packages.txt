@@ -1,0 +1,6 @@
+
+code
+code-marketplace
+paclog
+python-pip
+ttf-meslo-nerd-font-powerlevel10k

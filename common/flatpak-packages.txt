@@ -1,0 +1,7 @@
+com.discordapp.Discord
+com.spotify.Client
+org.chromium.Chromium
+org.filezillaproject.Filezilla
+org.gnome.gedit
+org.mozilla.firefox
+org.videolan.VLC

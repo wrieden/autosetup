@@ -31,6 +31,7 @@ yay -S --noconfirm --needed python python-pip
 rm -rf ~/.python-venv
 python -m venv ~/.python-venv
 source ~/.python-venv/bin/activate
+pip install --upgrade pip
 pip install $(curl -fsSL $repourl/pip-packages.txt)
 
 # pyocd
@@ -45,7 +46,7 @@ rm -rf pyOCD
 yay -S --noconfirm --needed code code-marketplace
 echo $(curl -fsSL $repourl/code-packages.txt) | xargs -rn1 code --install-extension
 
-$ wsl stuff
+#wsl stuff
 ELECTRON_WAYLAND='''
 --enable-features=UseOzonePlatform
 --ozone-platform=wayland
