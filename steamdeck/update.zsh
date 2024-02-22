@@ -13,12 +13,6 @@ git stash
 git pull --rebase
 git stash pop
 
-cp -v ~/.ssh/config $common/sshconfig
-cp -v ~/.gitconfig $common/
-cp -v ~/.gitconfig-trinamic $common/
-cp -v ~/.zshrc $common/
-cp -v ~/.p10k.zsh $common/
-
 echo """$(echo "$(yay -Qqe)\n$(paclog -f in | sed -En 's/.*installed\s+(\S+).*/\1/p' | sed -n '/paclog/,$p')" | sort | uniq -d | sort -u < pacman-packages.txt)""" > pacman-packages.txt
 echo "$(pip list --not-required --exclude-editable --format freeze | sed -En 's/(\S+)==.*/\1/p' | sort -u < $common/pip-packages.txt)" > $common/pip-packages.txt
 echo "$(code --list-extensions | sort -u < $common/code-packages.txt)" > $common/code-packages.txt

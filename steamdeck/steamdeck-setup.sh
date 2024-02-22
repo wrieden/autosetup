@@ -1,13 +1,12 @@
 #setup layout
-repourl=https://raw.githubusercontent.com/wrieden/autosetup/main/manjaro
+
+source $(dirname $0)/../common/snippets/env_setup.sh
 
 passwd
-
 sudo steamos-readonly disable
 sudo pacman-key --init
 sudo pacman-key --populate archlinux holo
 sudo pacman -Syyu --noconfirm
-
 
 #install yay
 sudo pacman -Sy base-devel git glibc gcc gcc-libs fakeroot linux-api-headers libarchive --noconfirm --needed
@@ -18,16 +17,13 @@ cd ..
 rm -rf yay-bin
 
 
-# zsh + goodies
-yay -S --noconfirm --needed zsh ttf-meslo-nerd-font-powerlevel10k
-sudo chsh -s $(which zsh) $USER
-
-rm -rf ~/.oh-my-zsh
-git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-curl -fsSL $repourl/.zshrc > ~/.zshrc
-curl -fsSL $repourl/.p10k.zsh > ~/.p10k.zsh
+source $snippets/flatpak_setup.sh
+source $snippets/git_setup.sh
+source $snippets/zsh_setup.sh
+source $snippets/python_setup.sh
+source $snippets/pyocd_setup.sh
+source $snippets/code_setup.sh
 
 
-
+ln -sf $configs/chromium-flags.conf ~/.config/chromium-flags.conf
 
