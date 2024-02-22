@@ -1,5 +1,10 @@
 annotated-types
+bokeh
+bokey
+chart-studio
+dash
 fastapi-utils
+gprof2dot
 lxml
 matplotlib
 pip
@@ -12,3 +17,4 @@ requests
 setuptools
 sse-starlette
 uvicorn
+xdot

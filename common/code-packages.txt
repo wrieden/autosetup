@@ -4,12 +4,17 @@ mcu-debug.debug-tracker-vscode
 mcu-debug.memory-view
 mcu-debug.peripheral-viewer
 mcu-debug.rtos-views
+ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
 ms-vscode.cmake-tools
 ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
+ms-vscode.hexeditor
 ms-vscode.makefile-tools
+redhat.vscode-xml
 svelte.svelte-vscode
 twxs.cmake
+visualstudioexptteam.intellicode-api-usage-examples
+visualstudioexptteam.vscodeintellicode
