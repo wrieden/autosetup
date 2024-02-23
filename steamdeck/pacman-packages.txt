@@ -12,3 +12,4 @@ python-pip
 screen
 ttf-meslo-nerd-font-powerlevel10k
 zsh
+zsh-theme-powerlevel10k-git
