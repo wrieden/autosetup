@@ -1,0 +1,3 @@
+[submodule "common/emulation/retool"]
+	path = common/emulation/retool
+	url = git@github.com:unexpectedpanda/retool.git

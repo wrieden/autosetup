@@ -17,4 +17,7 @@ source $snippets/fstab_sdcard_update.sh
 echo """$(echo "$(yay -Qqe)\n$(paclog -f in | sed -En 's/.*installed\s+(\S+).*/\1/p' | sed -n '/paclog/,$p')" | sort | uniq -d | sort -u < pacman-packages.txt)""" > pacman-packages.txt
 yay -S --noconfirm --needed $(cat pacman-packages.txt)
 
+stow --ignore="(readme.txt|systeminfo.txt)" -d /mnt/sdcard/emulation -t ~/Emulation/bios bios
+stow --ignore="(readme.txt|systeminfo.txt)" -d /mnt/sdcard/emulation -t ~/Emulation/roms roms
+
 cd $prevdir
