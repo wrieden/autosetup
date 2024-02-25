@@ -1,6 +1,6 @@
 rm -rf dat/merged
 mkdir -p dat/merged
-find dat/raw -name \*.dat | python dat_process.py --bins nes snes n64 gamecube gb gbc gba atari2600 atari5200 atari7800 atarilynx jaguar gamegear mastersystem megadrive sega32x --output dat/merged
+find dat/raw -name \*.dat | sed -E '/(byteswapped|multiboot|e-reader|play-yan|source code|headerless|\(video\)|jaguar\s*(\(ABS\)|\(JAG\)|\(COF\)|\(ROM\))|lynx\s*(\(LNX\)|\(BLL\)))/Id' | python dat_process.py --bins nes snes n64 gamecube gb gbc gba atari2600 atari5200 atari7800 atarilynx jaguar gamegear mastersystem megadrive sega32x --output dat/merged
 
 cd retool
 rm -rf ../dat/processed
