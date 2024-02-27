@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FilesOnly>false</FilesOnly>
+  <zstd>false</zstd>
+  <DatRoot>../dat/roms</DatRoot>
+  <CacheFile>RomVault3_2.Cache</CacheFile>
+  <FixLevel>Level2</FixLevel>
+  <DatRules>
+    <DatRule>
+      <DirKey>RomVault</DirKey>
+      <Compression>Zip</Compression>
+      <CompressionOverrideDAT>false</CompressionOverrideDAT>
+      <Merge>None</Merge>
+      <Filter>KeepAll</Filter>
+      <HeaderType>Optional</HeaderType>
+      <MergeOverrideDAT>false</MergeOverrideDAT>
+      <SingleArchive>false</SingleArchive>
+      <SubDirType>KeepAllSubDirs</SubDirType>
+      <MultiDATDirOverride>false</MultiDATDirOverride>
+      <UseDescriptionAsDirName>false</UseDescriptionAsDirName>
+      <UseIdForName>false</UseIdForName>
+      <CompleteOnly>false</CompleteOnly>
+      <IgnoreFiles />
+      <AddCategorySubDirs>false</AddCategorySubDirs>
+      <CategoryOrder />
+    </DatRule>
+  </DatRules>
+  <DirMappings>
+    <DirMapping>
+      <DirKey>RomVault</DirKey>
+      <DirPath>../roms</DirPath>
+    </DirMapping>
+  </DirMappings>
+  <IgnoreFiles />
+  <EInfo />
+  <DoubleCheckDelete>true</DoubleCheckDelete>
+  <DebugLogsEnabled>false</DebugLogsEnabled>
+  <DetailedFixReporting>true</DetailedFixReporting>
+  <CacheSaveTimerEnabled>true</CacheSaveTimerEnabled>
+  <CacheSaveTimePeriod>10</CacheSaveTimePeriod>
+  <ConvertToTrrntzip>true</ConvertToTrrntzip>
+  <ConvertToRV7Z>false</ConvertToRV7Z>
+  <chkBoxShowCorrect>false</chkBoxShowCorrect>
+  <chkBoxShowMissing>false</chkBoxShowMissing>
+  <chkBoxShowFixed>true</chkBoxShowFixed>
+  <chkBoxShowMIA>false</chkBoxShowMIA>
+  <chkBoxShowMerged>false</chkBoxShowMerged>
+  <MIAAnon>false</MIAAnon>
+  <MIACallback>false</MIACallback>
+  <DeleteOldCueFiles>false</DeleteOldCueFiles>
+</Settings>
