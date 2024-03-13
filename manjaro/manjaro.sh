@@ -55,4 +55,7 @@ echo $ELECTRON_WAYLAND > ~/.config/chromium-flags.conf
 echo $ELECTRON_WAYLAND > ~/.config/code-flags.conf
 gsettings set org.gnome.desktop.interface cursor-size 12
 
-
+#udev
+sudo groupadd usb
+sudo usermod -a -G usb $USER
+echo '''SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", GROUP="usb", MODE="0666"''' | sudo tee -a /etc/udev/rules.d/50-usb.rules
