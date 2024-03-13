@@ -1,58 +1,17 @@
-repourl=https://raw.githubusercontent.com/wrieden/autosetup/main/manjaro
-
-sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm yay
-
-# anchor pkg, marks install date
+source $(dirname $0)/../common/snippets/env_setup.sh
+source $snippets/pacman_setup.sh
 yay -S --noconfirm --needed paclog
+yay -S --noconfirm --needed $packages/pacman.txt
 
-# git
-yay -S --noconfirm --needed git
-mkdir ~/.ssh
-curl -fsSL $repourl/sshconfig > ~/.ssh/config
-curl -fsSL $repourl/.gitconfig > ~/.gitconfig
-curl -fsSL $repourl/.gitconfig-trinamic > ~/.gitconfig-trinamic
+source $snippets/git_setup.sh
+source $snippets/zsh_setup.sh
+source $snippets/python_setup.sh
+source $snippets/pyocd_setup.sh
+source $snippets/code_setup.sh
 
-# zsh + goodies
-yay -S --noconfirm --needed zsh ttf-meslo-nerd-font-powerlevel10k
-sudo chsh -s $(which zsh) $USER
 
-rm -rf ~/.oh-my-zsh
-git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-curl -fsSL $repourl/.zshrc > ~/.zshrc
-curl -fsSL $repourl/.p10k.zsh > ~/.p10k.zsh
-
-# packages
-yay -S --noconfirm --needed $(curl -fsSL $repourl/packages.txt)
-
-# python
-yay -S --noconfirm --needed python python-pip
-rm -rf ~/.python-venv
-python -m venv ~/.python-venv
-source ~/.python-venv/bin/activate
-pip install --upgrade pip
-pip install $(curl -fsSL $repourl/pip-packages.txt)
-
-# pyocd
-pip install pyocd
-pyocd pack install $(curl -fsSL $repourl/pyocd-packages.txt)
-git clone https://github.com/pyocd/pyOCD.git
-sudo cp pyOCD/udev/*.rules /etc/udev/rules.d/
-sudo udevadm control --reload-rules && udevadm trigger
-rm -rf pyOCD
-
-# code
-yay -S --noconfirm --needed code code-marketplace
-echo $(curl -fsSL $repourl/code-packages.txt) | xargs -rn1 code --install-extension
-
-#wsl stuff
-ELECTRON_WAYLAND='''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
-'''
-echo $ELECTRON_WAYLAND > ~/.config/chromium-flags.conf
-echo $ELECTRON_WAYLAND > ~/.config/code-flags.conf
+ln -sf $configs/code-flags.conf ~/.config/code-flags.conf
+ln -sf $configs/chromium-flags.conf ~/.config/chromium-flags.conf
 gsettings set org.gnome.desktop.interface cursor-size 12
 
 #udev
