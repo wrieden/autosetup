@@ -13,9 +13,9 @@ source $snippets/code_setup.sh
 
 ln -sf $configs/code-flags.conf ~/.config/code-flags.conf
 ln -sf $configs/chromium-flags.conf ~/.config/chromium-flags.conf
-gsettings set org.gnome.desktop.interface cursor-size 12
+#gsettings set org.gnome.desktop.interface cursor-size 12
 
 #udev
-sudo groupadd usb
-sudo usermod -a -G usb $USER
-echo '''SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", GROUP="usb", MODE="0666"''' | sudo tee -a /etc/udev/rules.d/50-usb.rules
+#sudo groupadd usb
+#sudo usermod -a -G usb $USER
+#echo '''SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", GROUP="usb", MODE="0666"''' | sudo tee -a /etc/udev/rules.d/50-usb.rules

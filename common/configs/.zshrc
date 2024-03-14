@@ -1,3 +1,4 @@
+[[ -v DBUS_SESSION_BUS_ADDRESS ]] || export $(dbus-launch)
 [[ ! -v WSL_DISTRO_NAME ]] || echo "$(usbip list --r=$(ip route show 0.0.0.0/0 | cut -d\  -f3) | sed -rn 's/^\s*([0-9]+-[0-9]+).*/\1/p') $(usbip port 2>/dev/null | sed -rn 's/^.*dev\s+0*([0-9]+)\/0*([0-9]+).*$/\1-\2/p')" | tr " " "\n" | sort | uniq -u | xargs -rn1 sudo usbip attach --r=$(ip route show 0.0.0.0/0 | cut -d\  -f3) -b
 [[ ! -f ~/.python-venv/bin/activate ]] || source ~/.python-venv/bin/activate
 
