@@ -1,16 +1,24 @@
 #!/bin/zsh
+[[ $(command -v paclog) ]] || { echo "paclog not found"; exit 1 }
+[[ $(command -v pyocd) ]] || { echo "pyocd not found"; exit 1 }
 
-[[ $(command -v paclog) ]] || exit 1
-[[ $(command -v pyocd) ]] || exit 1
+source $(dirname $0)/../common/snippets/env_setup.sh
+
+git stash
+git pull --rebase
+git stash pop
+
+source $snippets/python_update.sh
+source $snippets/pyocd_update.sh
+source $snippets/code_update.sh
+
+exit
 
 olddir=$(pwd)
 setupdir=$(dirname $0)
 cd $setupdir
 common=$(dirname $(pwd))/common/
 
-git stash
-git pull --rebase
-git stash pop
 
 echo """$(echo "$(yay -Qqe)\n$(paclog -f in | sed -En 's/.*installed\s+(\S+).*/\1/p' | sed -n '/paclog/,$p')" | sort | uniq -d | sort -u < $common/pacman-packages.txt)""" > $common/pacman-packages.txt
 echo "$(pip list --not-required --exclude-editable --format freeze | sed -En 's/(\S+)==.*/\1/p' | sort -u < $common/pip-packages.txt)" > $common/pip-packages.txt

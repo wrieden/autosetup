@@ -1,12 +1,21 @@
-setupdir=$(dirname $(readlink -f $0))
-common=$(dirname $setupdir)/common
+source $(dirname $0)/../common/snippets/env_setup.sh
+source $snippets/pacman_setup.sh
+
+yay -S --noconfirm --needed paclog
+yay -S --noconfirm --needed $(cat $packages/pacman.txt)
+
+source $snippets/git_setup.sh
+source $snippets/zsh_setup.sh
+source $snippets/python_setup.sh
+source $snippets/pyocd_setup.sh
+source $snippets/code_setup.sh
 
 
-ln -sf $common/.p10k.zsh ~/.p10k.zsh
-ln -sf $common/.zshrc ~/.zshrc
-ln -sf $common/.gitconfig ~/.gitconfig
-ln -sf $common/.gitconfig-trinamic ~/.gitconfig-trinamic
-ln -sf $common/sshconfig ~/.ssh/config
-ln -sf $common/code-settings.json ~/.config/Code\ -\ OSS/User/settings.json
-ln -sf $common/code-flags.conf ~/.config/code-flags.conf
-ln -sf $common/chromium-flags.conf ~/.config/chromium-flags.conf
+ln -sf $configs/code-flags.conf ~/.config/code-flags.conf
+ln -sf $configs/chromium-flags.conf ~/.config/chromium-flags.conf
+gsettings set org.gnome.desktop.interface cursor-size 12
+
+#udev
+sudo groupadd usb
+sudo usermod -a -G usb $USER
+echo '''SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", GROUP="usb", MODE="0666"''' | sudo tee -a /etc/udev/rules.d/50-usb.rules

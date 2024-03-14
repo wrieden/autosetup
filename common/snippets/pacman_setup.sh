@@ -1,7 +1,7 @@
  #!/bin/sh
 echo "Setting up pacman"
 
-sudo pacman -Syyu --noconfirm
+sudo pacman -Syu --noconfirm
 
 if [[ ! $(command -v yay) ]]; then
   if [[ $(pacman -Ss ^yay$) ]]; then
