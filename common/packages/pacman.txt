@@ -27,5 +27,7 @@ python-pip
 screen
 sigrok-firmware-dreamsourcelab-dslogic
 stm32cubemx
+ttf-droid
 ttf-meslo-nerd-font-powerlevel10k
+upower
 zsh
