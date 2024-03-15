@@ -8,3 +8,5 @@ sudo ln -sf $configs/wsl.conf /etc/wsl.conf
 sudo ln -sf $configs/profile-wsl.conf /etc/profile.d/wsl.sh
 sudo ln -sf $configs/udev-wsl.conf /etc/udev/rules.d/wsl.sh
 
+
+systemctl --user enable wsl-symlink-wayland.service     
