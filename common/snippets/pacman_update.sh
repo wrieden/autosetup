@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "\n\nUpdating python"
 
-[[ $(command -v yay) ]] || { echo "yay not found" && exit 1 }
+[[ $(command -v yay) ]] || { echo "yay not found" && exit 1; }
 
 yay -Syu --noconfirm
 installed_pkg=$(echo "$(yay -Qqe)\n$(paclog -f in | sed -En 's/.*installed\s+(\S+).*/\1/p' | sed -n '/paclog/,$p')" | sort | uniq -d)

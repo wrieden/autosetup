@@ -1,0 +1,5 @@
+.*makefile-tools.*
+.*VisualStudioExptTeam.*
+twxs.cmake
+ms-vscode.cmake-tools
+ms-python.vscode-pylance
